@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <title>Rohit Sai | Portfolio</title>
 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    
+    <!-- Main Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
+<!-- ================= HERO SECTION ================= -->
 <header class="hero">
     <div class="hero-text">
         <h1>Hi, I’m Rohit Sai</h1>
-        
+
         <p>
-            <strong>Computer Science Engineering undergraduate</strong> interested in problem-solving and building
-            real-world software solutions, with a focus on practical systems and AI-driven technologies.
+            <strong>Computer Science Engineering undergraduate</strong> interested in
+            problem-solving and building real-world software solutions, with a focus
+            on practical systems and AI-driven technologies.
         </p>
 
         <div class="contact-email">
@@ -30,12 +32,9 @@
         </div>
 
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/rohit-sai-716646298/" 
-               target="_blank" 
-               rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rohit-sai-716646298/" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
-
             <a href="https://github.com/grohitsai" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
@@ -47,8 +46,7 @@
     </div>
 </header>
 
-
-
+<!-- ================= EDUCATION ================= -->
 <section>
     <h2>Education</h2>
     <p><strong>KL University, Hyderabad</strong></p>
@@ -56,6 +54,7 @@
     <p>CGPA: 8.64 / 10</p>
 </section>
 
+<!-- ================= SKILLS ================= -->
 <section>
     <h2>Skills</h2>
     <ul>
@@ -66,57 +65,175 @@
     </ul>
 </section>
 
+<!-- ================= PROJECTS ================= -->
 <section>
-    <h2>Projects</h2>
+    <h2>
+        Projects
+        <span class="more-link" onclick="openModal('projects')">more info</span>
+    </h2>
 
     <div class="project">
         <h3>Vision-Based Traffic Synchronization System</h3>
         <p>
-            Built an AI-powered traffic synchronization system that analyzes traffic flow
-            and dynamically adjusts signal timings to reduce congestion and prioritize
-            emergency vehicles.
+            AI-powered system that dynamically adjusts traffic signals
+            based on real-time traffic flow.
         </p>
     </div>
 
     <div class="project">
         <h3>Habit Rabbit – Habit Tracking Application</h3>
         <p>
-            Designed and developed a habit-tracking application to help users maintain
-            consistent daily habits through structured tracking and progress monitoring.
+            A habit-tracking application focused on consistency
+            and progress monitoring.
         </p>
     </div>
 </section>
 
+<!-- ================= ACHIEVEMENTS ================= -->
 <section>
-    <h2>Achievements</h2>
+    <h2>
+        Achievements
+        <span class="more-link" onclick="openModal('achievements')">more info</span>
+    </h2>
+
     <ul>
         <li>
-            <strong>1st Prize</strong> – College-level hackathon at KLH University for developing
-            <strong>PaveAlert</strong>, a software-based solution addressing road safety and infrastructure challenges.
+            <strong>1st Prize</strong> – College-level hackathon at KLH University
+            for developing <strong>PaveAlert</strong>
         </li>
         <li>
-            <strong>3rd Prize</strong> – Hackathon conducted by Google Developers Group (GDG) at
-            KLH University for an AI-powered Vision-Based Traffic Synchronization System.
+            <strong>3rd Prize</strong> – GDG Hackathon at KLH University
+            for Vision-Based Traffic Synchronization System
         </li>
     </ul>
 </section>
 
+<!-- ================= POSITION OF RESPONSIBILITY ================= -->
 <section>
     <h2>Position of Responsibility</h2>
     <p><strong>Arts Organizer – College Arts Committee</strong></p>
     <p>
-        Coordinated planning and execution of arts-related events, managing
-        schedules and on-ground activities.
+        Coordinated planning and execution of arts-related events,
+        managing schedules and on-ground activities.
     </p>
 </section>
 
+<!-- ================= CERTIFICATIONS ================= -->
 <section>
-    <h2>Certifications</h2>
+    <h2>
+        Certifications
+        <span class="more-link" onclick="openModal('certifications')">more info</span>
+    </h2>
+
     <ul>
         <li>Meta – Introduction to Front-End Development</li>
         <li>Board Infinity – Hands-On Spring MVC</li>
     </ul>
 </section>
+
+<!-- ================= MODAL (COMMON) ================= -->
+<div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-box">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+function openModal(type) {
+    const modal = document.getElementById("modal-overlay");
+    const content = document.getElementById("modal-content");
+    let html = "";
+
+    /* PROJECTS MODAL */
+    if (type === "projects") {
+        html = `
+            <h2>Vision-Based Traffic Synchronization System</h2>
+
+            <div class="achievement-images">
+                <img src="images/projects/project1-1.jpg" alt="Traffic Dashboard">
+                <img src="images/projects/project1-2.jpg" alt="Signal Control Logic">
+                <img src="images/projects/project1-3.jpg" alt="Traffic Map Visualization">
+            </div>
+
+            <h3>Problem Statement</h3>
+            <p>
+                Urban traffic congestion occurs due to static traffic signals
+                that do not adapt to real-time vehicle density.
+            </p>
+
+            <h3>Key Problems</h3>
+            <ul>
+                <li>Fixed-time signals cause congestion</li>
+                <li>No real-time density analysis</li>
+                <li>Poor intersection prioritization</li>
+            </ul>
+
+            <h3>Solution</h3>
+            <p>
+                An AI and computer vision-based system that dynamically adjusts
+                traffic signal timings based on real-time traffic conditions.
+            </p>
+
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>Python</li>
+                <li>Computer Vision</li>
+                <li>AI-based traffic analysis</li>
+                <li>Frontend dashboard</li>
+            </ul>
+
+            <h3>Outcome</h3>
+            <p>
+                Improved traffic efficiency and intelligent signal control,
+                earning <strong>3rd Prize at the GDG Hackathon</strong>.
+            </p>
+        `;
+    }
+
+    /* ACHIEVEMENTS MODAL */
+    if (type === "achievements") {
+        html = `
+            <h2>Achievements</h2>
+
+            <h3>1st Prize – PaveAlert (College Hackathon)</h3>
+            <div class="achievement-images">
+                <img src="images/achievements/pavealert-1.jpg">
+                <img src="images/achievements/pavealert-2.jpg">
+                <img src="images/achievements/pavealert-3.jpg">
+            </div>
+
+            <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
+            <div class="achievement-images">
+                <img src="images/achievements/traffic-1.jpg">
+                <img src="images/achievements/traffic-2.jpg">
+                <img src="images/achievements/traffic-3.jpg">
+            </div>
+        `;
+    }
+
+    /* CERTIFICATIONS MODAL */
+    if (type === "certifications") {
+        html = `
+            <h2>Certifications</h2>
+
+            <h3>Meta – Introduction to Front-End Development</h3>
+            <img src="images/certificates/meta-certificate.jpg" class="modal-image">
+
+            <h3>Board Infinity – Hands-On Spring MVC</h3>
+            <img src="images/certificates/springmvc-certificate.jpg" class="modal-image">
+        `;
+    }
+
+    content.innerHTML = html;
+    modal.classList.remove("hidden");
+}
+
+function closeModal() {
+    document.getElementById("modal-overlay").classList.add("hidden");
+}
+</script>
 
 </body>
 </html>

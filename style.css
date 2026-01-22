@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c9bcaeac; /* classic brown background */
+    background-color: #c9bcaeac; /* classic brown */
     color: #3c2d2d;
 }
 
@@ -27,14 +27,14 @@ li {
 
 
 /* =========================
-   HERO / HEADER SECTION
+   HERO / HEADER
 ========================= */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    background-color: #f2e6e6; /* soft classic tone */
+    background-color: #cfe3f1; /* soft blue */
 }
 
 .hero-text {
@@ -72,7 +72,7 @@ li {
 
 
 /* =========================
-   CONTACT (EMAIL)
+   CONTACT EMAIL
 ========================= */
 .contact-email {
     margin-top: 12px;
@@ -89,11 +89,11 @@ li {
 
 .contact-email i {
     font-size: 22px;
-    color: #e22113; /* Gmail red */
+    color: #e22113;
 }
 
 .contact-email a:hover {
-    color: #5C4033;
+    color: #5c4033;
     text-decoration: underline;
 }
 
@@ -122,7 +122,7 @@ li {
 
 
 /* =========================
-   SECTIONS (CARDS)
+   SECTION CARDS
 ========================= */
 section {
     background-color: #fbfbfb;
@@ -145,7 +145,7 @@ section:hover {
 .project {
     padding: 18px 20px;
     margin-bottom: 22px;
-    background-color: #F8F3EE;
+    background-color: #f8f3ee;
     border-radius: 6px;
 }
 
@@ -156,7 +156,7 @@ section:hover {
 
 
 /* =========================
-   LINKS (GLOBAL)
+   GLOBAL LINKS
 ========================= */
 a {
     text-decoration: none;
@@ -165,6 +165,121 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+
+/* =========================
+   MORE INFO LINK
+========================= */
+.more-link {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #2f77ea;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   MODAL BOX
+========================= */
+.modal-box {
+    background: #eef5fb;
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 14px;
+    position: relative;
+}
+
+.modal-box h2 {
+    margin-bottom: 20px;
+}
+
+.modal-box h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MODAL CLOSE BUTTON
+========================= */
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   ACHIEVEMENT IMAGE GRID
+========================= */
+.achievement-block {
+    margin-bottom: 40px;
+}
+
+.achievement-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.achievement-images img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    background-color: #eaf3fb;
+}
+
+
+/* =========================
+   MODAL IMAGES
+========================= */
+.modal-img,
+.modal-image {
+    width: 100%;
+    max-width: 550px;
+    margin: 15px 0 35px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #eef6ff;
+}
+
+
+/* =========================
+   DISABLE SCROLL (MODAL)
+========================= */
+body.modal-open {
+    overflow: hidden;
 }
 
 
@@ -184,5 +299,17 @@ a:hover {
 
     .hero-text {
         max-width: 100%;
+    }
+
+    .modal-box {
+        width: 90%;
+    }
+
+    .achievement-images {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-images img {
+        height: auto;
     }
 }
