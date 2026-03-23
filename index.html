@@ -1,239 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rohit Sai | Portfolio</title>
+html = `
+    <!-- PROJECT 1 -->
+    <h2>Vision-Based Traffic Synchronization System</h2>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- ================= HERO SECTION ================= -->
-<header class="hero">
-    <div class="hero-text">
-        <h1>Hi, I’m Rohit Sai</h1>
-
-        <p>
-            <strong>Computer Science Engineering undergraduate</strong> interested in
-            problem-solving and building real-world software solutions, with a focus
-            on practical systems and AI-driven technologies.
-        </p>
-
-        <div class="contact-email">
-            <a href="mailto:grohitsai31@gmail.com">
-                <i class="fab fa-google"></i>
-                <span>grohitsai31@gmail.com</span>
-            </a>
-        </div>
-
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/rohit-sai-716646298/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/grohitsai" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
+    <div class="achievement-images">
+        <img src="images/projects/project1-1.jpg">
+        <img src="images/projects/project1-2.jpg">
+        <img src="images/projects/project1-3.jpg">
     </div>
 
-    <div class="hero-image">
-        <img src="profile.jpg" alt="Rohit Sai" class="profile-pic">
-    </div>
-</header>
-
-<!-- ================= EDUCATION ================= -->
-<section>
-    <h2>Education</h2>
-    <p><strong>KL University, Hyderabad</strong></p>
-    <p>Bachelor of Technology in Computer Science and Engineering</p>
-    <p>CGPA: 8.64 / 10</p>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li><strong>Languages:</strong> C, C++, Java, Python, JavaScript, HTML, CSS</li>
-        <li><strong>Web Development:</strong> React, Node.js, Express.js, Next.js</li>
-        <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
-        <li><strong>Tools:</strong> VS Code, Git, Eclipse, PyCharm</li>
-    </ul>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section>
-    <h2>
-        Projects
-        <span class="more-link" onclick="openModal('projects')">more info</span>
-    </h2>
-
-    <div class="project">
-        <h3>Vision-Based Traffic Synchronization System</h3>
-        <p>
-            AI-powered system that dynamically adjusts traffic signals
-            based on real-time traffic flow.
-        </p>
-    </div>
-
-    <div class="project">
-        <h3>Habit Rabbit – Habit Tracking Application</h3>
-        <p>
-            A habit-tracking application focused on consistency
-            and progress monitoring.
-        </p>
-    </div>
-</section>
-
-<!-- ================= ACHIEVEMENTS ================= -->
-<section>
-    <h2>
-        Achievements
-        <span class="more-link" onclick="openModal('achievements')">more info</span>
-    </h2>
-
-    <ul>
-        <li>
-            <strong>1st Prize</strong> – College-level hackathon at KLH University
-            for developing <strong>PaveAlert</strong>
-        </li>
-        <li>
-            <strong>3rd Prize</strong> – GDG Hackathon at KLH University
-            for Vision-Based Traffic Synchronization System
-        </li>
-    </ul>
-</section>
-
-<!-- ================= POSITION OF RESPONSIBILITY ================= -->
-<section>
-    <h2>Position of Responsibility</h2>
-    <p><strong>Arts Organizer – College Arts Committee</strong></p>
+    <h3>Problem Statement</h3>
     <p>
-        Coordinated planning and execution of arts-related events,
-        managing schedules and on-ground activities.
+        Urban traffic congestion occurs due to static traffic signals
+        that do not adapt to real-time vehicle density.
     </p>
-</section>
 
-<!-- ================= CERTIFICATIONS ================= -->
-<section>
-    <h2>
-        Certifications
-        <span class="more-link" onclick="openModal('certifications')">more info</span>
-    </h2>
-
+    <h3>Key Problems</h3>
     <ul>
-        <li>Meta – Introduction to Front-End Development</li>
-        <li>Board Infinity – Hands-On Spring MVC</li>
+        <li>Fixed-time signals cause congestion</li>
+        <li>No real-time density analysis</li>
+        <li>Poor intersection prioritization</li>
     </ul>
-</section>
 
-<!-- ================= MODAL (COMMON) ================= -->
-<div id="modal-overlay" class="modal-overlay hidden">
-    <div class="modal-box">
-        <span class="modal-close" onclick="closeModal()">×</span>
-        <div id="modal-content"></div>
+    <h3>Solution</h3>
+    <p>
+        An AI and computer vision-based system that dynamically adjusts
+        traffic signal timings based on real-time traffic conditions.
+    </p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li>Python</li>
+        <li>Computer Vision</li>
+        <li>AI-based traffic analysis</li>
+        <li>Frontend dashboard</li>
+    </ul>
+
+    <h3>Outcome</h3>
+    <p>
+        Improved traffic efficiency and intelligent signal control,
+        earning <strong>3rd Prize at the GDG Hackathon</strong>.
+    </p>
+
+    <hr>
+
+    <!-- PROJECT 2 -->
+    <h2>AI Job Alert Automation System (n8n)</h2>
+
+    <div class="achievement-images">
+        <img src="images/projects/job-1.png" alt="Workflow">
+        <img src="images/projects/job-2.png" alt="Processing">
+        <img src="images/projects/job-3.png" alt="Output">
     </div>
-</div>
 
-<!-- ================= SCRIPT ================= -->
-<script>
-function openModal(type) {
-    const modal = document.getElementById("modal-overlay");
-    const content = document.getElementById("modal-content");
-    let html = "";
+    <h3>Problem Statement</h3>
+    <p>
+        Job opportunities are scattered across multiple platforms, making it time-consuming
+        to manually search and track relevant roles consistently.
+    </p>
 
-    /* PROJECTS MODAL */
-    if (type === "projects") {
-        html = `
-            <h2>Vision-Based Traffic Synchronization System</h2>
+    <h3>Key Problems</h3>
+    <ul>
+        <li>Multiple platforms to check daily</li>
+        <li>High noise and irrelevant listings</li>
+        <li>No centralized or automated tracking</li>
+    </ul>
 
-            <div class="achievement-images">
-                <img src="images/projects/project1-1.jpg" alt="Traffic Dashboard">
-                <img src="images/projects/project1-2.jpg" alt="Signal Control Logic">
-                <img src="images/projects/project1-3.jpg" alt="Traffic Map Visualization">
-            </div>
+    <h3>Solution</h3>
+    <p>
+        Built an AI-powered automation workflow using n8n that fetches job listings
+        from multiple APIs, processes and filters them using AI, and delivers only
+        relevant opportunities via automated notifications.
+    </p>
 
-            <h3>Problem Statement</h3>
-            <p>
-                Urban traffic congestion occurs due to static traffic signals
-                that do not adapt to real-time vehicle density.
-            </p>
+    <h3>Technologies Used</h3>
+    <ul>
+        <li>n8n (Workflow Automation)</li>
+        <li>JavaScript (Data Processing)</li>
+        <li>REST APIs (RemoteOK, Adzuna, GitHub Jobs)</li>
+        <li>Groq LLM (AI Filtering)</li>
+    </ul>
 
-            <h3>Key Problems</h3>
-            <ul>
-                <li>Fixed-time signals cause congestion</li>
-                <li>No real-time density analysis</li>
-                <li>Poor intersection prioritization</li>
-            </ul>
+    <h3>Workflow</h3>
+    <p>
+        Scheduled Trigger → Fetch APIs → Merge Data → AI Filtering → Conditional Logic → Email Notification
+    </p>
 
-            <h3>Solution</h3>
-            <p>
-                An AI and computer vision-based system that dynamically adjusts
-                traffic signal timings based on real-time traffic conditions.
-            </p>
+    <h3>Outcome</h3>
+    <p>
+        Reduced manual effort in job searching by automating the entire pipeline,
+        delivering curated and relevant job alerts efficiently.
+    </p>
 
-            <h3>Technologies Used</h3>
-            <ul>
-                <li>Python</li>
-                <li>Computer Vision</li>
-                <li>AI-based traffic analysis</li>
-                <li>Frontend dashboard</li>
-            </ul>
-
-            <h3>Outcome</h3>
-            <p>
-                Improved traffic efficiency and intelligent signal control,
-                earning <strong>3rd Prize at the GDG Hackathon</strong>.
-            </p>
-        `;
-    }
-
-    /* ACHIEVEMENTS MODAL */
-    if (type === "achievements") {
-        html = `
-            <h2>Achievements</h2>
-
-            <h3>1st Prize – PaveAlert (College Hackathon)</h3>
-            <div class="achievement-images">
-                <img src="images/achievements/pavealert-1.jpg">
-                <img src="images/achievements/pavealert-2.jpg">
-                <img src="images/achievements/pavealert-3.jpg">
-            </div>
-
-            <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
-            <div class="achievement-images">
-                <img src="images/achievements/traffic-1.jpg">
-                <img src="images/achievements/traffic-2.jpg">
-                <img src="images/achievements/traffic-3.jpg">
-            </div>
-        `;
-    }
-
-    /* CERTIFICATIONS MODAL */
-    if (type === "certifications") {
-        html = `
-            <h2>Certifications</h2>
-
-            <h3>Meta – Introduction to Front-End Development</h3>
-            <img src="images/certificates/meta-certificate.jpg" class="modal-image">
-
-            <h3>Board Infinity – Hands-On Spring MVC</h3>
-            <img src="images/certificates/springmvc-certificate.jpg" class="modal-image">
-        `;
-    }
-
-    content.innerHTML = html;
-    modal.classList.remove("hidden");
-}
-
-function closeModal() {
-    document.getElementById("modal-overlay").classList.add("hidden");
-}
-</script>
-
-</body>
-</html>
+    <p>
+        <a href="YOUR_GITHUB_LINK" target="_blank">View Project →</a>
+    </p>
+`;
