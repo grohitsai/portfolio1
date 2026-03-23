@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohit Sai | Portfolio</title>
 
     <!-- Font Awesome Icons -->
@@ -58,7 +59,7 @@
 <section>
     <h2>Skills</h2>
     <ul>
-        <li><strong>Languages:</strong> C, C++, Java, Python, JavaScript, HTML, CSS</li>
+        <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</li>
         <li><strong>Web Development:</strong> React, Node.js, Express.js, Next.js</li>
         <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
         <li><strong>Tools:</strong> VS Code, Git, Eclipse, PyCharm</li>
@@ -79,7 +80,13 @@
             based on real-time traffic flow.
         </p>
     </div>
-
+    <div class="project">
+        <h3>AI Job Alert Automation System (n8n)</h3>
+        <p>
+            Built an AI-powered automation workflow that fetches jobs from multiple platforms,
+            filters them using AI, and delivers only relevant opportunities automatically.
+        </p>
+    </div>
     <div class="project">
         <h3>Habit Rabbit – Habit Tracking Application</h3>
         <p>
@@ -146,36 +153,24 @@ function openModal(type) {
     const content = document.getElementById("modal-content");
     let html = "";
 
-    /* PROJECTS MODAL */
     if (type === "projects") {
         html = `
-            <h2>Vision-Based Traffic Synchronization System</h2>
-
+            <h2>Project 1 - Vision-Based Traffic Synchronization System</h2>
             <div class="achievement-images">
                 <img src="images/projects/project1-1.jpg" alt="Traffic Dashboard">
                 <img src="images/projects/project1-2.jpg" alt="Signal Control Logic">
                 <img src="images/projects/project1-3.jpg" alt="Traffic Map Visualization">
             </div>
-
             <h3>Problem Statement</h3>
-            <p>
-                Urban traffic congestion occurs due to static traffic signals
-                that do not adapt to real-time vehicle density.
-            </p>
-
+            <p>Urban traffic congestion occurs due to static traffic signals that do not adapt to real-time vehicle density.</p>
             <h3>Key Problems</h3>
             <ul>
                 <li>Fixed-time signals cause congestion</li>
                 <li>No real-time density analysis</li>
                 <li>Poor intersection prioritization</li>
             </ul>
-
             <h3>Solution</h3>
-            <p>
-                An AI and computer vision-based system that dynamically adjusts
-                traffic signal timings based on real-time traffic conditions.
-            </p>
-
+            <p>An AI and computer vision-based system that dynamically adjusts traffic signal timings based on real-time traffic conditions.</p>
             <h3>Technologies Used</h3>
             <ul>
                 <li>Python</li>
@@ -183,27 +178,43 @@ function openModal(type) {
                 <li>AI-based traffic analysis</li>
                 <li>Frontend dashboard</li>
             </ul>
-
             <h3>Outcome</h3>
-            <p>
-                Improved traffic efficiency and intelligent signal control,
-                earning <strong>3rd Prize at the GDG Hackathon</strong>.
-            </p>
+            <p>Improved traffic efficiency and intelligent signal control, earning <strong>3rd Prize at the GDG Hackathon</strong>.</p>
+            <hr>
+
+            <h2>Project 2 - AI Job Alert Automation System (n8n)</h2>
+            <div class="achievement-images">
+                <img src="images/projects/project2-1.jpg" alt="Job Alert Workflow">
+                <img src="images/projects/project2-2.jpg" alt="n8n Automation">
+                <img src="images/projects/project2-3.jpg" alt="Job Notification">
+            </div>
+            <h3>Problem Statement</h3>
+            <p>Job opportunities are scattered across multiple platforms, making it time-consuming to track relevant roles manually.</p>
+            <h3>Solution</h3>
+            <p>Built an automation workflow using n8n that fetches job listings from multiple APIs, processes and filters them using AI, and sends only relevant jobs via notifications.</p>
+            <h3>Workflow</h3>
+            <p>Scheduled Trigger → APIs → Processing → AI Filtering → Notification</p>
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>n8n (Workflow Automation)</li>
+                <li>JavaScript</li>
+                <li>REST APIs</li>
+                <li>Groq LLM</li>
+            </ul>
+            <h3>Outcome</h3>
+            <p>Reduced manual effort by automating job search and delivering curated opportunities efficiently.</p>
         `;
     }
 
-    /* ACHIEVEMENTS MODAL */
     if (type === "achievements") {
         html = `
             <h2>Achievements</h2>
-
             <h3>1st Prize – PaveAlert (College Hackathon)</h3>
             <div class="achievement-images">
                 <img src="images/achievements/pavealert-1.jpg">
                 <img src="images/achievements/pavealert-2.jpg">
                 <img src="images/achievements/pavealert-3.jpg">
             </div>
-
             <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
             <div class="achievement-images">
                 <img src="images/achievements/traffic-1.jpg">
@@ -213,14 +224,11 @@ function openModal(type) {
         `;
     }
 
-    /* CERTIFICATIONS MODAL */
     if (type === "certifications") {
         html = `
             <h2>Certifications</h2>
-
             <h3>Meta – Introduction to Front-End Development</h3>
             <img src="images/certificates/meta-certificate.jpg" class="modal-image">
-
             <h3>Board Infinity – Hands-On Spring MVC</h3>
             <img src="images/certificates/springmvc-certificate.jpg" class="modal-image">
         `;
