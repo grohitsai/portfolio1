@@ -311,6 +311,9 @@ body.modal-open {
     .hero-image {
         order: -1;
         margin-bottom: 30px;
+        width: 160px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .profile-pic {
