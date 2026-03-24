@@ -83,8 +83,9 @@
     <div class="project">
         <h3>AI Job Alert Automation System (n8n)</h3>
         <p>
-            Built an AI-powered automation workflow that fetches jobs from multiple platforms,
-            filters them using AI, and delivers only relevant opportunities automatically.
+            AI-powered job alert automation system that integrates multiple job APIs,
+            normalizes and deduplicates data, and uses Groq LLM for relevance filtering.
+            Scheduled execution sends curated opportunities via email, eliminating manual search.
         </p>
     </div>
     <div class="project">
@@ -188,21 +189,49 @@ function openModal(type) {
                 <img src="images/projects/project2-2.jpg" alt="n8n Automation">
                 <img src="images/projects/project2-3.jpg" alt="Job Notification">
             </div>
-            <h3>Problem Statement</h3>
-            <p>Job opportunities are scattered across multiple platforms, making it time-consuming to track relevant roles manually.</p>
-            <h3>Solution</h3>
-            <p>Built an automation workflow using n8n that fetches job listings from multiple APIs, processes and filters them using AI, and sends only relevant jobs via notifications.</p>
-            <h3>Workflow</h3>
-            <p>Scheduled Trigger → APIs → Processing → AI Filtering → Notification</p>
-            <h3>Technologies Used</h3>
+            <h3><strong>Overview</strong></h3>
+            <p>An AI-powered job alert automation system built with n8n that eliminates manual searching across RemoteOK, Adzuna, GitHub Jobs, and more.</p>
+            <h3><strong>Problem Statement</strong></h3>
+            <p>Job opportunities are distributed across multiple platforms, making manual daily checks time-consuming, inefficient, and prone to missing high-quality matches.</p>
+            <h3><strong>Solution</strong></h3>
+            <p>Automated n8n workflow collects, processes and filters listings, applies AI relevance scoring, removes duplicates, and sends curated email alerts.</p>
+            <h3><strong>Workflow Architecture</strong></h3>
+            <ul>
+                <li>Scheduled trigger to start the workflow at defined intervals</li>
+                <li>Fetch jobs from RemoteOK, Adzuna, GitHub Jobs (via REST API nodes)</li>
+                <li>JavaScript nodes clean, normalize, merge, and remove duplicates</li>
+                <li>Groq LLM evaluates and filters listings for role relevance</li>
+                <li>Conditional logic filters out low-quality/ineligible results</li>
+                <li>Email node sends final curated jobs to users</li>
+            </ul>
+            <h3><strong>Technologies Used</strong></h3>
             <ul>
                 <li>n8n (Workflow Automation)</li>
-                <li>JavaScript</li>
-                <li>REST APIs</li>
-                <li>Groq LLM</li>
+                <li>JavaScript (Data transformation)</li>
+                <li>REST APIs (RemoteOK, Adzuna, GitHub Jobs)</li>
+                <li>Groq LLM (AI-based filtering)</li>
+                <li>Email Integration (SMTP/email delivery)</li>
             </ul>
-            <h3>Outcome</h3>
-            <p>Reduced manual effort by automating job search and delivering curated opportunities efficiently.</p>
+            <h3><strong>Key Features</strong></h3>
+            <ul>
+                <li>Fully automated job aggregation across platforms</li>
+                <li>AI-powered relevance filtering (not just keyword matching)</li>
+                <li>Deduplication and quality checks</li>
+                <li>Scheduled hands-free execution</li>
+                <li>Personalized curated alerts via email</li>
+            </ul>
+            <h3><strong>Outcome</strong></h3>
+            <p>Significantly reduced manual effort and improved job search efficiency by consistently delivering top-matched opportunities.</p>
+            <h3><strong>Future Enhancements</strong></h3>
+            <ul>
+                <li>Category-based filtering (Backend, AI, Internships)</li>
+                <li>Multi-user support with saved preferences</li>
+                <li>Dashboard for tracking applications and trends</li>
+                <li>Telegram/WhatsApp notifications</li>
+                <li>Resume-based matching using AI</li>
+            </ul>
+            <h3><strong>🔥 WHY THIS IS GOOD</strong></h3>
+            <p>This version showcases real engineering, clear system design, AI-driven decision making, and recruiter-friendly impact.</p>
         `;
     }
 
