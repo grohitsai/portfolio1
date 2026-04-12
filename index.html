@@ -158,83 +158,133 @@
 function openModal(type) {
     const modal = document.getElementById("modal-overlay");
     const content = document.getElementById("modal-content");
+    const normalizedType = String(type || "").trim().toLowerCase();
+
+    // Build absolute asset URLs so images work consistently on GitHub Pages project sites.
+    const repoBase =
+        window.location.hostname.endsWith("github.io")
+            ? `/${window.location.pathname.split("/")[1] || ""}`
+            : "";
+
+    const asset = (relativePath) => `${repoBase}/${relativePath}`.replace(/\/+/g, "/");
+
     let html = "";
 
-    /* PROJECTS MODAL */
-    if (type === "projects") {
-        html = `
-            <h2>Vision-Based Traffic Synchronization System</h2>
+/* PROJECTS MODAL */
+if (normalizedType === "projects") {
+    html = `
 
-            <div class="achievement-images">
-                <img src="images/projects/project1-1.jpg" alt="Traffic Dashboard">
-                <img src="images/projects/project1-2.jpg" alt="Signal Control Logic">
-                <img src="images/projects/project1-3.jpg" alt="Traffic Map Visualization">
-            </div>
+    <!-- 🔥 PROJECT 1 -->
+    <h2>Project 1 - Habit Rabbit – AI-Powered Habit Tracking System</h2>
+    <div class="achievement-images">
+        <img src="${asset("images/projects/project2-1.jpg")}" alt="Habit Rabbit screenshot 1">
+        <img src="${asset("images/projects/project2-2.jpg")}" alt="Habit Rabbit screenshot 2">
+        <img src="${asset("images/projects/project2-3.jpg")}" alt="Habit Rabbit screenshot 3">
+    </div>
 
-            <h3>Problem Statement</h3>
-            <p>
-                Urban traffic congestion occurs due to static traffic signals
-                that do not adapt to real-time vehicle density.
-            </p>
+    <h3>Overview</h3>
+    <p>
+        A full-stack productivity application that helps users track habits, maintain streaks,
+        and improve consistency using AI-driven insights powered by a RAG-based system.
+    </p>
 
-            <h3>Key Problems</h3>
-            <ul>
-                <li>Fixed-time signals cause congestion</li>
-                <li>No real-time density analysis</li>
-                <li>Poor intersection prioritization</li>
-            </ul>
+    <h3>Technologies Used</h3>
+    <ul>
+        <li>React</li>
+        <li>Node.js & Express</li>
+        <li>MongoDB</li>
+        <li>JWT Authentication</li>
+        <li>OpenAI API</li>
+        <li>Vector DB (Pinecone/Chroma)</li>
+    </ul>
 
-            <h3>Solution</h3>
-            <p>
-                An AI and computer vision-based system that dynamically adjusts
-                traffic signal timings based on real-time traffic conditions.
-            </p>
+    <hr>
 
-            <h3>Technologies Used</h3>
-            <ul>
-                <li>Python</li>
-                <li>Computer Vision</li>
-                <li>AI-based traffic analysis</li>
-                <li>Frontend dashboard</li>
-            </ul>
+    <!-- 🔥 PROJECT 2 -->
+    <h2>Project 2 - Vision-Based Traffic Synchronization System</h2>
 
-            <h3>Outcome</h3>
-            <p>
-                Improved traffic efficiency and intelligent signal control,
-                earning <strong>3rd Prize at the GDG Hackathon</strong>.
-            </p>
-        `;
-    }
+    <div class="achievement-images">
+        <img src="${asset("images/projects/project1-1.jpg")}" alt="Traffic project screenshot 1">
+        <img src="${asset("images/projects/project1-2.jpg")}" alt="Traffic project screenshot 2">
+        <img src="${asset("images/projects/project1-3.jpg")}" alt="Traffic project screenshot 3">
+    </div>
 
+    <h3>Problem Statement</h3>
+    <p>
+        Urban traffic congestion occurs due to static traffic signals that do not adapt
+        to real-time vehicle density.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+        AI-based system dynamically adjusts traffic signals using computer vision.
+    </p>
+
+    <h3>Outcome</h3>
+    <p>
+        Improved traffic efficiency and won <strong>3rd Prize – GDG Hackathon</strong>.
+    </p>
+
+    <hr>
+
+    <!-- 🔥 PROJECT 3 -->
+    <h2>Project 3 - AI Job Alert Automation System (n8n)</h2>
+
+    <div class="achievement-images">
+        <img src="${asset("images/projects/project2-1.jpg")}" alt="Job automation screenshot 1">
+        <img src="${asset("images/projects/project2-2.jpg")}" alt="Job automation screenshot 2">
+        <img src="${asset("images/projects/project2-3.jpg")}" alt="Job automation screenshot 3">
+    </div>
+
+    <h3>Overview</h3>
+    <p>
+        AI-powered automation system that collects job listings from multiple APIs,
+        filters them using LLM, and sends personalized alerts.
+    </p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li>n8n</li>
+        <li>JavaScript</li>
+        <li>REST APIs</li>
+        <li>Groq LLM</li>
+    </ul>
+
+    `;
+}
     /* ACHIEVEMENTS MODAL */
-    if (type === "achievements") {
+    else if (normalizedType === "achievements") {
         html = `
             <h2>Achievements</h2>
 
             <h3>1st Prize – PaveAlert (College Hackathon)</h3>
             <div class="achievement-images">
-                <img src="images/achievements/pavealert-1.jpg">
-                <img src="images/achievements/pavealert-2.jpg">
-                <img src="images/achievements/pavealert-3.jpg">
+                <img src="${asset("images/achievements/pavealert-1.jpg")}" alt="PaveAlert achievement 1">
+                <img src="${asset("images/achievements/pavealert-2.jpg")}" alt="PaveAlert achievement 2">
+                <img src="${asset("images/achievements/pavealert-3.jpg")}" alt="PaveAlert achievement 3">
             </div>
 
             <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
             <div class="achievement-images">
-                <img src="images/achievements/traffic-1.png">
-                <img src="images/achievements/traffic-2.jpg">
-                <img src="images/achievements/traffic-3.jpg">
+                <img src="${asset("images/achievements/traffic-1.png")}" alt="Traffic achievement 1">
+                <img src="${asset("images/achievements/traffic-2.jpg")}" alt="Traffic achievement 2">
+                <img src="${asset("images/achievements/traffic-3.jpg")}" alt="Traffic achievement 3">
             </div>
         `;
     }
 
-    if (type === "certifications") {
+    else if (normalizedType === "certifications") {
         html = `
             <h2>Certifications</h2>
             <h3>Meta – Introduction to Front-End Development</h3>
-            <img src="images/certificates/meta-certificate.jpg" class="modal-image">
+            <img src="${asset("images/certificates/meta-certificate.jpg")}" class="modal-image" alt="Meta certificate">
             <h3>Board Infinity – Hands-On Spring MVC</h3>
-            <img src="images/certificates/springmvc-certificate.jpg" class="modal-image">
+            <img src="${asset("images/certificates/springmvc-certificate.jpg")}" class="modal-image" alt="Spring MVC certificate">
         `;
+    }
+
+    if (!html) {
+        html = "<h2>Details are unavailable right now.</h2><p>Please refresh the page and try again.</p>";
     }
 
     content.innerHTML = html;
@@ -248,3 +298,5 @@ function closeModal() {
 
 </body>
 </html>
+
+<!-- version 2 -->
