@@ -59,7 +59,7 @@
 <section>
     <h2>Skills</h2>
     <ul>
-        <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</li>
+        <li><strong>Languages:</strong> C, C++, Java, Python, JavaScript, HTML, CSS</li>
         <li><strong>Web Development:</strong> React, Node.js, Express.js, Next.js</li>
         <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
         <li><strong>Tools:</strong> VS Code, Git, Eclipse, PyCharm</li>
@@ -73,26 +73,26 @@
         <span class="more-link" onclick="openModal('projects')">more info</span>
     </h2>
 
+    <!-- 🔥 Project 1 -->
+    <div class="project">
+        <h3>Habit Rabbit – AI-Driven Productivity & Habit Tracking System</h3>
+        <p>
+            A full-stack productivity app that tracks habits, monitors streaks, and analyzes user behavior using a RAG-based AI system to provide personalized insights and recommendations.
+        </p>
+    </div>
+
+    <!-- 🔥 Project 2 -->
     <div class="project">
         <h3>Vision-Based Traffic Synchronization System</h3>
         <p>
-            AI-powered system that dynamically adjusts traffic signals
-            based on real-time traffic flow.
+            AI-powered system that dynamically adjusts traffic signals based on real-time traffic flow using computer vision techniques.
         </p>
     </div>
+
     <div class="project">
         <h3>AI Job Alert Automation System (n8n)</h3>
         <p>
-            AI-powered job alert automation system that integrates multiple job APIs,
-            normalizes and deduplicates data, and uses Groq LLM for relevance filtering.
-            Scheduled execution sends curated opportunities via email, eliminating manual search.
-        </p>
-    </div>
-    <div class="project">
-        <h3>Habit Rabbit – Habit Tracking Application</h3>
-        <p>
-            A habit-tracking application focused on consistency
-            and progress monitoring.
+            Automated job alert system that integrates multiple APIs, filters listings using AI, and delivers personalized opportunities via email.
         </p>
     </div>
 </section>
@@ -110,7 +110,7 @@
             for developing <strong>PaveAlert</strong>
         </li>
         <li>
-            <strong>3rd Prize</strong> – GDG Hackathon at KLH University
+            <strong>3rd Prize</strong> – Google Developers Group(GDG) on campus KLH University
             for Vision-Based Traffic Synchronization System
         </li>
     </ul>
@@ -119,13 +119,19 @@
 <!-- ================= POSITION OF RESPONSIBILITY ================= -->
 <section>
     <h2>Position of Responsibility</h2>
-    <p><strong>Arts Organizer – College Arts Committee</strong></p>
-    <p>
-        Coordinated planning and execution of arts-related events,
-        managing schedules and on-ground activities.
-    </p>
-</section>
 
+    <ul>
+        <li>
+            <strong>Organizing Team Member – AI Student Summit 2026 (24-Hour AI Hackathon)</strong><br>
+            Part of the organizing team for Telangana’s largest 24-hour AI Hackathon, managing evaluations and contributing to a large-scale multi-college event.
+        </li>
+
+        <li>
+            <strong>Arts Organizer – College Arts Committee</strong><br>
+            Coordinated planning and execution of arts-related events, managing schedules and on-ground activities.
+        </li>
+    </ul>
+</section>
 <!-- ================= CERTIFICATIONS ================= -->
 <section>
     <h2>
@@ -154,24 +160,36 @@ function openModal(type) {
     const content = document.getElementById("modal-content");
     let html = "";
 
+    /* PROJECTS MODAL */
     if (type === "projects") {
         html = `
-            <h2>Project 1 - Vision-Based Traffic Synchronization System</h2>
+            <h2>Vision-Based Traffic Synchronization System</h2>
+
             <div class="achievement-images">
                 <img src="images/projects/project1-1.jpg" alt="Traffic Dashboard">
                 <img src="images/projects/project1-2.jpg" alt="Signal Control Logic">
                 <img src="images/projects/project1-3.jpg" alt="Traffic Map Visualization">
             </div>
+
             <h3>Problem Statement</h3>
-            <p>Urban traffic congestion occurs due to static traffic signals that do not adapt to real-time vehicle density.</p>
+            <p>
+                Urban traffic congestion occurs due to static traffic signals
+                that do not adapt to real-time vehicle density.
+            </p>
+
             <h3>Key Problems</h3>
             <ul>
                 <li>Fixed-time signals cause congestion</li>
                 <li>No real-time density analysis</li>
                 <li>Poor intersection prioritization</li>
             </ul>
+
             <h3>Solution</h3>
-            <p>An AI and computer vision-based system that dynamically adjusts traffic signal timings based on real-time traffic conditions.</p>
+            <p>
+                An AI and computer vision-based system that dynamically adjusts
+                traffic signal timings based on real-time traffic conditions.
+            </p>
+
             <h3>Technologies Used</h3>
             <ul>
                 <li>Python</li>
@@ -179,73 +197,30 @@ function openModal(type) {
                 <li>AI-based traffic analysis</li>
                 <li>Frontend dashboard</li>
             </ul>
+
             <h3>Outcome</h3>
-            <p>Improved traffic efficiency and intelligent signal control, earning <strong>3rd Prize at the GDG Hackathon</strong>.</p>
-            <hr>
-
-            <h2>Project 2 - AI Job Alert Automation System (n8n)</h2>
-            <div class="achievement-images">
-                <img src="images/projects/project2-1.jpg" alt="Job Alert Workflow">
-                <img src="images/projects/project2-2.jpg" alt="n8n Automation">
-                <img src="images/projects/project2-3.jpg" alt="Job Notification">
-            </div>
-            <h3><strong>Overview</strong></h3>
-            <p>An AI-powered job alert automation system built with n8n that eliminates manual searching across RemoteOK, Adzuna, GitHub Jobs, and more.</p>
-            <h3><strong>Problem Statement</strong></h3>
-            <p>Job opportunities are distributed across multiple platforms, making manual daily checks time-consuming, inefficient, and prone to missing high-quality matches.</p>
-            <h3><strong>Solution</strong></h3>
-            <p>Automated n8n workflow collects, processes and filters listings, applies AI relevance scoring, removes duplicates, and sends curated email alerts.</p>
-            <h3><strong>Workflow Architecture</strong></h3>
-            <ul>
-                <li>Scheduled trigger to start the workflow at defined intervals</li>
-                <li>Fetch jobs from RemoteOK, Adzuna, GitHub Jobs (via REST API nodes)</li>
-                <li>JavaScript nodes clean, normalize, merge, and remove duplicates</li>
-                <li>Groq LLM evaluates and filters listings for role relevance</li>
-                <li>Conditional logic filters out low-quality/ineligible results</li>
-                <li>Email node sends final curated jobs to users</li>
-            </ul>
-            <h3><strong>Technologies Used</strong></h3>
-            <ul>
-                <li>n8n (Workflow Automation)</li>
-                <li>JavaScript (Data transformation)</li>
-                <li>REST APIs (RemoteOK, Adzuna, GitHub Jobs)</li>
-                <li>Groq LLM (AI-based filtering)</li>
-                <li>Email Integration (SMTP/email delivery)</li>
-            </ul>
-            <h3><strong>Key Features</strong></h3>
-            <ul>
-                <li>Fully automated job aggregation across platforms</li>
-                <li>AI-powered relevance filtering (not just keyword matching)</li>
-                <li>Deduplication and quality checks</li>
-                <li>Scheduled hands-free execution</li>
-                <li>Personalized curated alerts via email</li>
-            </ul>
-            <h3><strong>Outcome</strong></h3>
-            <p>Significantly reduced manual effort and improved job search efficiency by consistently delivering top-matched opportunities.</p>
-            <h3><strong>Future Enhancements</strong></h3>
-            <ul>
-                <li>Category-based filtering (Backend, AI, Internships)</li>
-                <li>Multi-user support with saved preferences</li>
-                <li>Dashboard for tracking applications and trends</li>
-                <li>Telegram/WhatsApp notifications</li>
-                <li>Resume-based matching using AI</li>
-            </ul>
-
+            <p>
+                Improved traffic efficiency and intelligent signal control,
+                earning <strong>3rd Prize at the GDG Hackathon</strong>.
+            </p>
         `;
     }
 
+    /* ACHIEVEMENTS MODAL */
     if (type === "achievements") {
         html = `
             <h2>Achievements</h2>
+
             <h3>1st Prize – PaveAlert (College Hackathon)</h3>
             <div class="achievement-images">
                 <img src="images/achievements/pavealert-1.jpg">
                 <img src="images/achievements/pavealert-2.jpg">
                 <img src="images/achievements/pavealert-3.jpg">
             </div>
+
             <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
             <div class="achievement-images">
-                <img src="images/achievements/traffic-1.jpg">
+                <img src="images/achievements/traffic-1.png">
                 <img src="images/achievements/traffic-2.jpg">
                 <img src="images/achievements/traffic-3.jpg">
             </div>
