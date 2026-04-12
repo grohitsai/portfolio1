@@ -118,7 +118,10 @@
 
 <!-- ================= POSITION OF RESPONSIBILITY ================= -->
 <section>
-    <h2>Position of Responsibility</h2>
+    <h2>
+        Position of Responsibility
+        <span class="more-link" onclick="openModal('responsibility')">more info</span>
+    </h2>
 
     <ul>
         <li>
@@ -273,6 +276,38 @@ if (normalizedType === "projects") {
         `;
     }
 
+    else if (normalizedType === "responsibility") {
+        html = `
+            <h2>Position of Responsibility</h2>
+
+            <h3>Organizing Team Member – AI Student Summit 2026 (24-Hour AI Hackathon)</h3>
+            <p>
+                Part of the organizing team for Telangana's largest 24-hour AI Hackathon held at KLH University, Hyderabad.
+                Managed evaluations, coordinated speakers and sessions, and contributed to organizing a large-scale multi-college event.
+            </p>
+
+            <h3>Event Highlights</h3>
+            <ul>
+                <li>750+ teams and approximately 3,500 participants from multiple states</li>
+                <li>Showcased cutting-edge AI talent from across the nation</li>
+                <li>Expert keynote sessions and intensive 24-hour hackathon</li>
+                <li>Industry partnerships and mentorship from prominent companies</li>
+                <li>Focused on innovation and practical problem-solving in AI</li>
+            </ul>
+
+            <h3>Event Photos</h3>
+            <div class="achievement-images">
+                <img src="${asset("images/position of responsibility/PR-1.jpeg")}" alt="AI Student Summit event 1">
+                <img src="${asset("images/position of responsibility/PR-2.jpeg")}" alt="AI Student Summit event 2">
+                <img src="${asset("images/position of responsibility/PR-3.jpeg")}" alt="AI Student Summit event 3">
+            </div>
+
+            <div class="achievement-images">
+                <img src="${asset("images/position of responsibility/PR-4.jpeg")}" alt="AI Student Summit event 4">
+            </div>
+        `;
+    }
+
     else if (normalizedType === "certifications") {
         html = `
             <h2>Certifications</h2>
@@ -298,5 +333,3 @@ function closeModal() {
 
 </body>
 </html>
-
-<!-- deploy-marker: portfolio1-main-2026-04-12 -->
