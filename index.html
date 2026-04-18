@@ -77,7 +77,7 @@
     <div class="project">
         <h3>Habit Rabbit – AI-Driven Productivity & Habit Tracking System</h3>
         <p>
-            A full-stack productivity app that tracks habits, monitors streaks, and analyzes user behavior using a RAG-based AI system to provide personalized insights and recommendations.
+            An AI-driven habit tracking system that helps users build consistency through progress analytics, streak tracking, and data-driven insights. Visualizes user behavior with heatmaps and charts to make progress easy to understand. Provides personalized recommendations to improve productivity and long-term habit formation.
         </p>
     </div>
 
@@ -93,6 +93,13 @@
         <h3>AI Job Alert Automation System (n8n)</h3>
         <p>
             Automated job alert system that integrates multiple APIs, filters listings using AI, and delivers personalized opportunities via email.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Finance Dashboard – Data Visualization & Expense Tracking System</h3>
+        <p>
+            A data-driven dashboard that visualizes income, expenses, and spending patterns through interactive charts, enabling efficient tracking and meaningful financial insights.
         </p>
     </div>
 </section>
@@ -178,33 +185,44 @@ if (normalizedType === "projects") {
     html = `
 
     <!-- 🔥 PROJECT 1 -->
-    <h2>Project 1 - Habit Rabbit – AI-Powered Habit Tracking System</h2>
+    <h2>Project 1 - Habit Rabbit – AI-Driven Productivity & Habit Tracking System</h2>
     <div class="achievement-images">
         <img src="${asset("images/projects/project2-1.jpg")}" alt="Habit Rabbit screenshot 1">
         <img src="${asset("images/projects/project2-2.jpg")}" alt="Habit Rabbit screenshot 2">
         <img src="${asset("images/projects/project2-3.jpg")}" alt="Habit Rabbit screenshot 3">
     </div>
 
-    <h3>Overview</h3>
+    <h3>Problem Statement</h3>
     <p>
-        A full-stack productivity application that helps users track habits, maintain streaks,
-        and improve consistency using AI-driven insights powered by a RAG-based system.
+        Maintaining consistency in daily habits is challenging due to lack of tracking, motivation, and visibility into progress over time.
     </p>
 
-    <h3>Technologies Used</h3>
+    <h3>Solution</h3>
+    <p>
+        Developed a full-stack habit tracking application that helps users build and maintain habits through daily tracking, streak monitoring, and progress visualization. The system provides GitHub-style heatmaps, analytics dashboards, and AI-driven insights to analyze user behavior and suggest improvements. Features like secure authentication, real-time feedback, and responsive design enhance usability and engagement.
+    </p>
+
+    <h3>Outcome</h3>
+    <p>
+        Enabled effective habit tracking and behavioral insights, improving user consistency and productivity through data-driven feedback.
+    </p>
+
+    <h3>Tools & Technologies Used</h3>
     <ul>
-        <li>React</li>
-        <li>Node.js & Express</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Node.js</li>
+        <li>Express.js</li>
         <li>MongoDB</li>
         <li>JWT Authentication</li>
-        <li>OpenAI API</li>
-        <li>Vector DB (Pinecone/Chroma)</li>
+        <li>Chart.js</li>
     </ul>
 
     <hr>
 
     <!-- 🔥 PROJECT 2 -->
-    <h2>Project 2 - Vision-Based Traffic Synchronization System</h2>
+    <h2>Project 2 - Vision-Based Traffic Synchronization System with AI</h2>
 
     <div class="achievement-images">
         <img src="${asset("images/projects/project1-1.jpg")}" alt="Traffic project screenshot 1">
@@ -214,19 +232,29 @@ if (normalizedType === "projects") {
 
     <h3>Problem Statement</h3>
     <p>
-        Urban traffic congestion occurs due to static traffic signals that do not adapt
-        to real-time vehicle density.
+        Urban traffic congestion occurs due to static traffic signals that fail to adapt to real-time vehicle density, leading to inefficient traffic flow and delays.
     </p>
 
     <h3>Solution</h3>
     <p>
-        AI-based system dynamically adjusts traffic signals using computer vision.
+        Developed an AI-powered traffic management system that dynamically adjusts signal timings using computer vision and real-time traffic data. The system monitors vehicle density, optimizes traffic flow, provides route suggestions, and prioritizes emergency vehicles for faster clearance. It also includes features like real-time simulation, map-based visualization, and citizen incident reporting to enhance overall traffic management.
     </p>
 
     <h3>Outcome</h3>
     <p>
-        Improved traffic efficiency and won <strong>3rd Prize – GDG Hackathon</strong>.
+        Improved traffic efficiency and optimized signal control, successfully securing <strong>3rd Prize at the GDG Hackathon</strong>.
     </p>
+
+    <h3>Tools & Technologies Used</h3>
+    <ul>
+        <li>React.js</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS</li>
+        <li>Google Maps API</li>
+        <li>Firebase Firestore</li>
+        <li>Gemini AI</li>
+        <li>Computer Vision</li>
+    </ul>
 
     <hr>
 
@@ -239,18 +267,54 @@ if (normalizedType === "projects") {
         <img src="${asset("images/projects/project2-3.jpg")}" alt="Job automation screenshot 3">
     </div>
 
-    <h3>Overview</h3>
+    <h3>Problem Statement</h3>
     <p>
-        AI-powered automation system that collects job listings from multiple APIs,
-        filters them using LLM, and sends personalized alerts.
+        Job seekers often spend significant time searching across multiple platforms, leading to missed opportunities and inefficient tracking of relevant job listings.
     </p>
 
-    <h3>Technologies Used</h3>
+    <h3>Solution</h3>
+    <p>
+        Developed an AI-powered automation system that collects job listings from multiple APIs, filters them based on user preferences using an LLM, and delivers personalized job alerts. The system streamlines the job search process by automatically identifying relevant opportunities and reducing manual effort.
+    </p>
+
+    <h3>Tools & Technologies Used</h3>
     <ul>
         <li>n8n</li>
         <li>JavaScript</li>
         <li>REST APIs</li>
         <li>Groq LLM</li>
+    </ul>
+
+    <hr>
+
+    <!-- 🔥 PROJECT 4 -->
+    <h2>Project 4 - Finance Dashboard - Interactive Data Visualization System</h2>
+
+    <div class="achievement-images">
+        <img src="${asset("images/projects/project4-1.png")}" alt="Finance dashboard screenshot 1">
+        <img src="${asset("images/projects/project4-2.png")}" alt="Finance dashboard screenshot 2">
+        <img src="${asset("images/projects/project4-3.png")}" alt="Finance dashboard screenshot 3">
+    </div>
+
+    <h3>Problem Statement</h3>
+    <p>
+        Managing and understanding personal financial data can be difficult due to scattered transactions, lack of visualization, and limited insights into spending patterns.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+        Developed a finance dashboard that centralizes financial data and transforms it into interactive visualizations. The system enables users to track income and expenses, analyze spending trends, and gain meaningful insights through charts and categorized views. Additional features like transaction filtering, sorting, role-based access, and dark mode enhance usability and overall user experience.
+    </p>
+
+    <h3>Tools & Technologies Used</h3>
+    <ul>
+        <li>React.js</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS</li>
+        <li>Recharts</li>
+        <li>JavaScript</li>
+        <li>React Context API</li>
+        <li>Vite</li>
     </ul>
 
     `;
