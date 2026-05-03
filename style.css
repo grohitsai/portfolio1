@@ -1,12 +1,29 @@
 /* =========================
+   CSS VARIABLES
+========================= */
+:root {
+    --color-primary: #2f77ea;
+    --color-text: #3c2d2d;
+    --color-border: #4b2525fc;
+    --color-bg: #fbfbfb;
+    --color-project-bg: #f8f3ee;
+    --color-modal-bg: #eef5fb;
+    --color-modal-overlay: rgba(0, 0, 0, 0.55);
+    --color-hero-bg: #cfe3f1;
+    --color-page-bg: #c9bcaeac;
+    --border-radius: 12px;
+    --transition-smooth: 0.25s ease;
+}
+
+/* =========================
    GLOBAL STYLES
 ========================= */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c9bcaeac; /* classic brown */
-    color: #3c2d2d;
+    background-color: var(--color-page-bg);
+    color: var(--color-text);
 }
 
 h2 {
@@ -34,7 +51,7 @@ li {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    background-color: #cfe3f1; /* soft blue */
+    background-color: var(--color-hero-bg);
 }
 
 .hero-text {
@@ -83,7 +100,7 @@ li {
     align-items: center;
     gap: 8px;
     font-size: 16px;
-    color: #2f77ea;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -93,7 +110,7 @@ li {
 }
 
 .contact-email a:hover {
-    color: #5c4033;
+    color: var(--color-text);
     text-decoration: underline;
 }
 
@@ -125,12 +142,12 @@ li {
    SECTION CARDS
 ========================= */
 section {
-    background-color: #fbfbfb;
+    background-color: var(--color-bg);
     margin: 30px;
     padding: 30px;
-    border-radius: 12px;
-    border-left: 6px solid #4b2525fc;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: var(--border-radius);
+    border-left: 6px solid var(--color-border);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 section:hover {
@@ -145,7 +162,7 @@ section:hover {
 .project {
     padding: 18px 20px;
     margin-bottom: 22px;
-    background-color: #f8f3ee;
+    background-color: var(--color-project-bg);
     border-radius: 6px;
 }
 
@@ -160,7 +177,7 @@ section:hover {
 ========================= */
 a {
     text-decoration: none;
-    color: #0077b5;
+    color: var(--color-primary);
 }
 
 a:hover {
@@ -174,7 +191,7 @@ a:hover {
 .more-link {
     font-size: 14px;
     margin-left: 10px;
-    color: #2f77ea;
+    color: var(--color-primary);
     cursor: pointer;
     font-weight: 500;
 }
@@ -190,7 +207,7 @@ a:hover {
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: var(--color-modal-overlay);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +223,7 @@ a:hover {
    MODAL BOX
 ========================= */
 .modal-box {
-    background: #eef5fb;
+    background: var(--color-modal-bg);
     width: 70%;
     max-height: 80vh;
     overflow-y: auto;
@@ -240,10 +257,6 @@ a:hover {
 /* =========================
    ACHIEVEMENT IMAGE GRID
 ========================= */
-.achievement-block {
-    margin-bottom: 40px;
-}
-
 .achievement-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -257,7 +270,7 @@ a:hover {
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid #dcdcdc;
-    background-color: #eaf3fb;
+    background-color: var(--color-modal-bg);
 }
 
 
@@ -269,9 +282,9 @@ a:hover {
     width: 100%;
     max-width: 550px;
     margin: 15px 0 35px;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     border: 1px solid #ddd;
-    background-color: #eef6ff;
+    background-color: var(--color-modal-bg);
 }
 
 

@@ -70,7 +70,7 @@
 <section>
     <h2>
         Projects
-        <span class="more-link" onclick="openModal('projects')">more info</span>
+        <span class="more-link" data-modal="projects">more info</span>
     </h2>
 
     <!-- 🔥 Project 1 -->
@@ -83,23 +83,23 @@
 
     <!-- 🔥 Project 2 -->
     <div class="project">
-        <h3>Vision-Based Traffic Synchronization System</h3>
+        <h3>Vision-Based Traffic Synchronization System with AI</h3>
         <p>
-            AI-powered system that dynamically adjusts traffic signals based on real-time traffic flow using computer vision techniques.
+            An AI-powered traffic management system that dynamically adjusts signal timings using computer vision and real-time vehicle density analysis. Visualizes traffic flow through simulation and map-based interfaces to optimize signal control. Improves traffic efficiency and prioritizes emergency vehicles for faster clearance.
         </p>
     </div>
 
     <div class="project">
         <h3>AI Job Alert Automation System (n8n)</h3>
         <p>
-            Automated job alert system that integrates multiple APIs, filters listings using AI, and delivers personalized opportunities via email.
+            An AI-powered automation system that collects job listings from multiple sources and filters them based on user preferences using intelligent processing. Streamlines the job search process by delivering personalized and relevant job alerts automatically. Reduces manual effort and ensures users never miss suitable opportunities.
         </p>
     </div>
 
     <div class="project">
-        <h3>Finance Dashboard – Data Visualization & Expense Tracking System</h3>
+        <h3>Finance Dashboard – Interactive Data Visualization System</h3>
         <p>
-            A data-driven dashboard that visualizes income, expenses, and spending patterns through interactive charts, enabling efficient tracking and meaningful financial insights.
+            A data-driven finance dashboard that transforms income and expense data into interactive visualizations and meaningful insights. Enables efficient tracking of transactions, spending trends, and financial activity through dynamic charts. Provides a clean and user-friendly interface for better financial understanding and decision-making.
         </p>
     </div>
 </section>
@@ -108,7 +108,7 @@
 <section>
     <h2>
         Achievements
-        <span class="more-link" onclick="openModal('achievements')">more info</span>
+        <span class="more-link" data-modal="achievements">more info</span>
     </h2>
 
     <ul>
@@ -127,7 +127,7 @@
 <section>
     <h2>
         Position of Responsibility
-        <span class="more-link" onclick="openModal('responsibility')">more info</span>
+        <span class="more-link" data-modal="responsibility">more info</span>
     </h2>
 
     <ul>
@@ -146,7 +146,7 @@
 <section>
     <h2>
         Certifications
-        <span class="more-link" onclick="openModal('certifications')">more info</span>
+        <span class="more-link" data-modal="certifications">more info</span>
     </h2>
 
     <ul>
@@ -158,242 +158,190 @@
 <!-- ================= MODAL (COMMON) ================= -->
 <div id="modal-overlay" class="modal-overlay hidden">
     <div class="modal-box">
-        <span class="modal-close" onclick="closeModal()">×</span>
+        <span class="modal-close">×</span>
         <div id="modal-content"></div>
     </div>
 </div>
 
 <!-- ================= SCRIPT ================= -->
 <script>
+// Modal content data structure
+const MODAL_DATA = {
+    projects: {
+        title: "Projects",
+        sections: [
+            {
+                id: "project1",
+                title: "Project 1 - Habit Rabbit – AI-Driven Productivity & Habit Tracking System",
+                images: ["images/projects/project2-1.jpg", "images/projects/project2-2.jpg", "images/projects/project2-3.jpg"],
+                problem: "Maintaining consistency in daily habits is challenging due to lack of tracking, motivation, and visibility into progress over time.",
+                solution: "Developed a full-stack habit tracking application that helps users build and maintain habits through daily tracking, streak monitoring, and progress visualization. The system provides GitHub-style heatmaps, analytics dashboards, and AI-driven insights to analyze user behavior and suggest improvements. Features like secure authentication, real-time feedback, and responsive design enhance usability and engagement.",
+                outcome: "Enabled effective habit tracking and behavioral insights, improving user consistency and productivity through data-driven feedback.",
+                tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "JWT Authentication", "Chart.js"]
+            },
+            {
+                id: "project2",
+                title: "Project 2 - Vision-Based Traffic Synchronization System with AI",
+                images: ["images/projects/project1-1.jpg", "images/projects/project1-2.jpg", "images/projects/project1-3.jpg"],
+                problem: "Urban traffic congestion occurs due to static traffic signals that fail to adapt to real-time vehicle density, leading to inefficient traffic flow and delays.",
+                solution: "Built an AI-powered traffic management system that dynamically adjusts signal timings using computer vision and real-time vehicle density analysis. It visualizes traffic flow through simulation and map-based interfaces to optimize signal control. The system also prioritizes emergency vehicles for faster clearance and improved traffic efficiency.",
+                outcome: "Improved traffic efficiency and optimized signal control, successfully securing 3rd Prize at the GDG Hackathon.",
+                tech: ["React.js", "TypeScript", "Tailwind CSS", "Google Maps API", "Firebase Firestore", "Gemini AI", "Computer Vision"]
+            },
+            {
+                id: "project3",
+                title: "Project 3 - AI Job Alert Automation System (n8n)",
+                images: ["images/projects/project2-1.jpg", "images/projects/project2-2.jpg", "images/projects/project2-3.jpg"],
+                problem: "Job seekers often spend significant time searching across multiple platforms, leading to missed opportunities and inefficient tracking of relevant job listings.",
+                solution: "Built an AI-powered automation workflow that collects job listings from multiple sources and filters them using intelligent preference-based processing. It streamlines the search process by delivering personalized and relevant job alerts automatically, reducing manual effort and minimizing missed opportunities.",
+                outcome: null,
+                tech: ["n8n", "JavaScript", "REST APIs", "Groq LLM"]
+            },
+            {
+                id: "project4",
+                title: "Project 4 - Finance Dashboard – Interactive Data Visualization System",
+                images: ["images/projects/project4-1.png", "images/projects/project4-2.png", "images/projects/project4-3.png"],
+                problem: "Managing and understanding personal financial data can be difficult due to scattered transactions, lack of visualization, and limited insights into spending patterns.",
+                solution: "Developed a data-driven finance dashboard that transforms income and expense data into interactive visualizations and practical insights. The dashboard enables users to track transactions, monitor spending trends, and understand financial activity through dynamic charts and clear data views. A clean, user-friendly interface supports better financial understanding and decision-making.",
+                outcome: null,
+                tech: ["React.js", "TypeScript", "Tailwind CSS", "Recharts", "JavaScript", "React Context API", "Vite"]
+            }
+        ]
+    },
+    achievements: {
+        title: "Achievements",
+        blocks: [
+            {
+                title: "1st Prize – PaveAlert (College Hackathon)",
+                images: ["images/achievements/pavealert-1.jpg", "images/achievements/pavealert-2.jpg", "images/achievements/pavealert-3.jpg"]
+            },
+            {
+                title: "3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)",
+                images: ["images/achievements/traffic-1.png", "images/achievements/traffic-2.jpg", "images/achievements/traffic-3.jpg"]
+            }
+        ]
+    },
+    responsibility: {
+        title: "Position of Responsibility",
+        main: {
+            title: "Organizing Team Member – AI Student Summit 2026 (24-Hour AI Hackathon)",
+            description: "Part of the organizing team for Telangana's largest 24-hour AI Hackathon held at KLH University, Hyderabad. Managed evaluations, coordinated speakers and sessions, and contributed to organizing a large-scale multi-college event.",
+            highlights: [
+                "750+ teams and approximately 3,500 participants from multiple states",
+                "Showcased cutting-edge AI talent from across the nation",
+                "Expert keynote sessions and intensive 24-hour hackathon",
+                "Industry partnerships and mentorship from prominent companies",
+                "Focused on innovation and practical problem-solving in AI"
+            ],
+            images: ["images/position of responsibility/PR-1.jpeg", "images/position of responsibility/PR-2.jpeg", "images/position of responsibility/PR-3.jpeg", "images/position of responsibility/PR-4.jpeg", "images/position of responsibility/PR-5.jpeg"]
+        }
+    },
+    certifications: {
+        title: "Certifications",
+        certs: [
+            {
+                name: "Meta – Introduction to Front-End Development",
+                image: "images/certificates/meta-certificate.jpg"
+            },
+            {
+                name: "Board Infinity – Hands-On Spring MVC",
+                image: "images/certificates/springmvc-certificate.jpg"
+            }
+        ]
+    }
+};
+
+// Build asset URLs for GitHub Pages compatibility
+function getAssetUrl(relativePath) {
+    const repoBase = window.location.hostname.endsWith("github.io")
+        ? `/${window.location.pathname.split("/")[1] || ""}`
+        : "";
+    return `${repoBase}/${relativePath}`.replace(/\/+/g, "/");
+}
+
+// Render image grid
+function renderImageGrid(images) {
+    return `<div class="achievement-images">${images.map(img => 
+        `<img src="${getAssetUrl(img)}" alt="Achievement image">`
+    ).join("")}</div>`;
+}
+
+// Render tech list
+function renderTechList(tech) {
+    return `<ul>${tech.map(t => `<li>${t}</li>`).join("")}</ul>`;
+}
+
+// Generate modal content
+function generateModalContent(type) {
+    type = (type || "").trim().toLowerCase();
+    const data = MODAL_DATA[type];
+    
+    if (!data) return "<h2>Details are unavailable right now.</h2><p>Please refresh and try again.</p>";
+
+    let html = `<h2>${data.title}</h2>`;
+
+    if (type === "projects") {
+        html += data.sections.map(proj => `
+            <h3>${proj.title}</h3>
+            ${renderImageGrid(proj.images)}
+            <h3>Problem Statement</h3>
+            <p>${proj.problem}</p>
+            <h3>Solution</h3>
+            <p>${proj.solution}</p>
+            ${proj.outcome ? `<h3>Outcome</h3><p>${proj.outcome}</p>` : ""}
+            <h3>Tools & Technologies Used</h3>
+            ${renderTechList(proj.tech)}
+            <hr>
+        `).join("");
+    } else if (type === "achievements") {
+        html += data.blocks.map(block => `
+            <h3>${block.title}</h3>
+            ${renderImageGrid(block.images)}
+        `).join("");
+    } else if (type === "responsibility") {
+        const r = data.main;
+        html += `
+            <h3>${r.title}</h3>
+            <p>${r.description}</p>
+            <h3>Event Highlights</h3>
+            <ul>${r.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+            <h3>Event Photos</h3>
+            ${renderImageGrid(r.images.slice(0, 3))}
+            ${renderImageGrid(r.images.slice(3))}
+        `;
+    } else if (type === "certifications") {
+        html += data.certs.map(cert => `
+            <h3>${cert.name}</h3>
+            <img src="${getAssetUrl(cert.image)}" class="modal-image" alt="${cert.name}">
+        `).join("");
+    }
+
+    return html;
+}
+
 function openModal(type) {
     const modal = document.getElementById("modal-overlay");
     const content = document.getElementById("modal-content");
-    const normalizedType = String(type || "").trim().toLowerCase();
-
-    // Build absolute asset URLs so images work consistently on GitHub Pages project sites.
-    const repoBase =
-        window.location.hostname.endsWith("github.io")
-            ? `/${window.location.pathname.split("/")[1] || ""}`
-            : "";
-
-    const asset = (relativePath) => `${repoBase}/${relativePath}`.replace(/\/+/g, "/");
-
-    let html = "";
-
-/* PROJECTS MODAL */
-if (normalizedType === "projects") {
-    html = `
-
-    <!-- 🔥 PROJECT 1 -->
-    <h2>Project 1 - Habit Rabbit – AI-Driven Productivity & Habit Tracking System</h2>
-    <div class="achievement-images">
-        <img src="${asset("images/projects/project2-1.jpg")}" alt="Habit Rabbit screenshot 1">
-        <img src="${asset("images/projects/project2-2.jpg")}" alt="Habit Rabbit screenshot 2">
-        <img src="${asset("images/projects/project2-3.jpg")}" alt="Habit Rabbit screenshot 3">
-    </div>
-
-    <h3>Problem Statement</h3>
-    <p>
-        Maintaining consistency in daily habits is challenging due to lack of tracking, motivation, and visibility into progress over time.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-        Developed a full-stack habit tracking application that helps users build and maintain habits through daily tracking, streak monitoring, and progress visualization. The system provides GitHub-style heatmaps, analytics dashboards, and AI-driven insights to analyze user behavior and suggest improvements. Features like secure authentication, real-time feedback, and responsive design enhance usability and engagement.
-    </p>
-
-    <h3>Outcome</h3>
-    <p>
-        Enabled effective habit tracking and behavioral insights, improving user consistency and productivity through data-driven feedback.
-    </p>
-
-    <h3>Tools & Technologies Used</h3>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>MongoDB</li>
-        <li>JWT Authentication</li>
-        <li>Chart.js</li>
-    </ul>
-
-    <hr>
-
-    <!-- 🔥 PROJECT 2 -->
-    <h2>Project 2 - Vision-Based Traffic Synchronization System with AI</h2>
-
-    <div class="achievement-images">
-        <img src="${asset("images/projects/project1-1.jpg")}" alt="Traffic project screenshot 1">
-        <img src="${asset("images/projects/project1-2.jpg")}" alt="Traffic project screenshot 2">
-        <img src="${asset("images/projects/project1-3.jpg")}" alt="Traffic project screenshot 3">
-    </div>
-
-    <h3>Problem Statement</h3>
-    <p>
-        Urban traffic congestion occurs due to static traffic signals that fail to adapt to real-time vehicle density, leading to inefficient traffic flow and delays.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-        Developed an AI-powered traffic management system that dynamically adjusts signal timings using computer vision and real-time traffic data. The system monitors vehicle density, optimizes traffic flow, provides route suggestions, and prioritizes emergency vehicles for faster clearance. It also includes features like real-time simulation, map-based visualization, and citizen incident reporting to enhance overall traffic management.
-    </p>
-
-    <h3>Outcome</h3>
-    <p>
-        Improved traffic efficiency and optimized signal control, successfully securing <strong>3rd Prize at the GDG Hackathon</strong>.
-    </p>
-
-    <h3>Tools & Technologies Used</h3>
-    <ul>
-        <li>React.js</li>
-        <li>TypeScript</li>
-        <li>Tailwind CSS</li>
-        <li>Google Maps API</li>
-        <li>Firebase Firestore</li>
-        <li>Gemini AI</li>
-        <li>Computer Vision</li>
-    </ul>
-
-    <hr>
-
-    <!-- 🔥 PROJECT 3 -->
-    <h2>Project 3 - AI Job Alert Automation System (n8n)</h2>
-
-    <div class="achievement-images">
-        <img src="${asset("images/projects/project2-1.jpg")}" alt="Job automation screenshot 1">
-        <img src="${asset("images/projects/project2-2.jpg")}" alt="Job automation screenshot 2">
-        <img src="${asset("images/projects/project2-3.jpg")}" alt="Job automation screenshot 3">
-    </div>
-
-    <h3>Problem Statement</h3>
-    <p>
-        Job seekers often spend significant time searching across multiple platforms, leading to missed opportunities and inefficient tracking of relevant job listings.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-        Developed an AI-powered automation system that collects job listings from multiple APIs, filters them based on user preferences using an LLM, and delivers personalized job alerts. The system streamlines the job search process by automatically identifying relevant opportunities and reducing manual effort.
-    </p>
-
-    <h3>Tools & Technologies Used</h3>
-    <ul>
-        <li>n8n</li>
-        <li>JavaScript</li>
-        <li>REST APIs</li>
-        <li>Groq LLM</li>
-    </ul>
-
-    <hr>
-
-    <!-- 🔥 PROJECT 4 -->
-    <h2>Project 4 - Finance Dashboard - Interactive Data Visualization System</h2>
-
-    <div class="achievement-images">
-        <img src="${asset("images/projects/project4-1.png")}" alt="Finance dashboard screenshot 1">
-        <img src="${asset("images/projects/project4-2.png")}" alt="Finance dashboard screenshot 2">
-        <img src="${asset("images/projects/project4-3.png")}" alt="Finance dashboard screenshot 3">
-    </div>
-
-    <h3>Problem Statement</h3>
-    <p>
-        Managing and understanding personal financial data can be difficult due to scattered transactions, lack of visualization, and limited insights into spending patterns.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-        Developed a finance dashboard that centralizes financial data and transforms it into interactive visualizations. The system enables users to track income and expenses, analyze spending trends, and gain meaningful insights through charts and categorized views. Additional features like transaction filtering, sorting, role-based access, and dark mode enhance usability and overall user experience.
-    </p>
-
-    <h3>Tools & Technologies Used</h3>
-    <ul>
-        <li>React.js</li>
-        <li>TypeScript</li>
-        <li>Tailwind CSS</li>
-        <li>Recharts</li>
-        <li>JavaScript</li>
-        <li>React Context API</li>
-        <li>Vite</li>
-    </ul>
-
-    `;
-}
-    /* ACHIEVEMENTS MODAL */
-    else if (normalizedType === "achievements") {
-        html = `
-            <h2>Achievements</h2>
-
-            <h3>1st Prize – PaveAlert (College Hackathon)</h3>
-            <div class="achievement-images">
-                <img src="${asset("images/achievements/pavealert-1.jpg")}" alt="PaveAlert achievement 1">
-                <img src="${asset("images/achievements/pavealert-2.jpg")}" alt="PaveAlert achievement 2">
-                <img src="${asset("images/achievements/pavealert-3.jpg")}" alt="PaveAlert achievement 3">
-            </div>
-
-            <h3>3rd Prize – Vision-Based Traffic Synchronization (GDG Hackathon)</h3>
-            <div class="achievement-images">
-                <img src="${asset("images/achievements/traffic-1.png")}" alt="Traffic achievement 1">
-                <img src="${asset("images/achievements/traffic-2.jpg")}" alt="Traffic achievement 2">
-                <img src="${asset("images/achievements/traffic-3.jpg")}" alt="Traffic achievement 3">
-            </div>
-        `;
-    }
-
-    else if (normalizedType === "responsibility") {
-        html = `
-            <h2>Position of Responsibility</h2>
-
-            <h3>Organizing Team Member – AI Student Summit 2026 (24-Hour AI Hackathon)</h3>
-            <p>
-                Part of the organizing team for Telangana's largest 24-hour AI Hackathon held at KLH University, Hyderabad.
-                Managed evaluations, coordinated speakers and sessions, and contributed to organizing a large-scale multi-college event.
-            </p>
-
-            <h3>Event Highlights</h3>
-            <ul>
-                <li>750+ teams and approximately 3,500 participants from multiple states</li>
-                <li>Showcased cutting-edge AI talent from across the nation</li>
-                <li>Expert keynote sessions and intensive 24-hour hackathon</li>
-                <li>Industry partnerships and mentorship from prominent companies</li>
-                <li>Focused on innovation and practical problem-solving in AI</li>
-            </ul>
-
-            <h3>Event Photos</h3>
-            <div class="achievement-images">
-                <img src="${asset("images/position of responsibility/PR-1.jpeg")}" alt="AI Student Summit event 1">
-                <img src="${asset("images/position of responsibility/PR-2.jpeg")}" alt="AI Student Summit event 2">
-                <img src="${asset("images/position of responsibility/PR-3.jpeg")}" alt="AI Student Summit event 3">
-            </div>
-
-            <div class="achievement-images">
-                <img src="${asset("images/position of responsibility/PR-4.jpeg")}" alt="AI Student Summit event 4">
-                <img src="${asset("images/position of responsibility/PR-5.jpeg")}" alt="AI Student Summit event 5">
-            </div>
-        `;
-    }
-
-    else if (normalizedType === "certifications") {
-        html = `
-            <h2>Certifications</h2>
-            <h3>Meta – Introduction to Front-End Development</h3>
-            <img src="${asset("images/certificates/meta-certificate.jpg")}" class="modal-image" alt="Meta certificate">
-            <h3>Board Infinity – Hands-On Spring MVC</h3>
-            <img src="${asset("images/certificates/springmvc-certificate.jpg")}" class="modal-image" alt="Spring MVC certificate">
-        `;
-    }
-
-    if (!html) {
-        html = "<h2>Details are unavailable right now.</h2><p>Please refresh the page and try again.</p>";
-    }
-
-    content.innerHTML = html;
+    content.innerHTML = generateModalContent(type);
     modal.classList.remove("hidden");
 }
 
 function closeModal() {
     document.getElementById("modal-overlay").classList.add("hidden");
 }
+
+// Event delegation for modal triggers and close
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("more-link")) {
+        openModal(e.target.dataset.modal);
+    }
+    if (e.target.classList.contains("modal-close")) {
+        closeModal();
+    }
+    if (e.target.id === "modal-overlay") {
+        closeModal();
+    }
+});
 </script>
 
 </body>
