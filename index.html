@@ -174,7 +174,7 @@ const MODAL_DATA = {
                 id: "project1",
                 title: "Project 1 - Habit Rabbit – AI-Driven Productivity & Habit Tracking System",
                 link: "https://habit-rabbit-bsgt.vercel.app/",
-                images: ["images/projects/project2-1.jpg", "images/projects/project2-2.jpg", "images/projects/project2-3.jpg"],
+                images: ["images/projects/project1-1.png", "images/projects/project1-2.png", "images/projects/project1-3.png"],
                 problem: "Maintaining consistency in daily habits is challenging due to lack of tracking, motivation, and visibility into progress over time.",
                 solution: "Developed a full-stack habit tracking application that helps users build and maintain habits through daily tracking, streak monitoring, and progress visualization. The system provides GitHub-style heatmaps, analytics dashboards, and AI-driven insights to analyze user behavior and suggest improvements. Features like secure authentication, real-time feedback, and responsive design enhance usability and engagement.",
                 outcome: "Enabled effective habit tracking and behavioral insights, improving user consistency and productivity through data-driven feedback.",
@@ -184,7 +184,7 @@ const MODAL_DATA = {
                 id: "project2",
                 title: "Project 2 - Vision-Based Traffic Synchronization System with AI",
                 link: "https://vision-based-traffic-sync.vercel.app/",
-                images: ["images/projects/project1-1.jpg", "images/projects/project1-2.jpg", "images/projects/project1-3.jpg"],
+                images: ["images/projects/project2-1.jpg", "images/projects/project2-2.jpg", "images/projects/project2-3.jpg"],
                 problem: "Urban traffic congestion occurs due to static traffic signals that fail to adapt to real-time vehicle density, leading to inefficient traffic flow and delays.",
                 solution: "Built an AI-powered traffic management system that dynamically adjusts signal timings using computer vision and real-time vehicle density analysis. It visualizes traffic flow through simulation and map-based interfaces to optimize signal control. The system also prioritizes emergency vehicles for faster clearance and improved traffic efficiency.",
                 outcome: "Improved traffic efficiency and optimized signal control, successfully securing 3rd Prize at the GDG Hackathon.",
@@ -193,8 +193,8 @@ const MODAL_DATA = {
             {
                 id: "project3",
                 title: "Project 3 - AI Job Alert Automation System (n8n)",
-                link: null,
-                images: ["images/projects/project2-1.jpg", "images/projects/project2-2.jpg", "images/projects/project2-3.jpg"],
+                link: "https://github.com/grohitsai/ai-job-alert-automation",
+                images: ["images/projects/project3-1.jpg", "images/projects/project3-2.jpg", "images/projects/project3-3.jpg"],
                 problem: "Job seekers often spend significant time searching across multiple platforms, leading to missed opportunities and inefficient tracking of relevant job listings.",
                 solution: "Built an AI-powered automation workflow that collects job listings from multiple sources and filters them using intelligent preference-based processing. It streamlines the search process by delivering personalized and relevant job alerts automatically, reducing manual effort and minimizing missed opportunities.",
                 outcome: null,
@@ -203,7 +203,7 @@ const MODAL_DATA = {
             {
                 id: "project4",
                 title: "Project 4 - Finance Dashboard – Interactive Data Visualization System",
-                link: "https://finance-dashboard-brown-theta.vercel.app/",
+            
                 images: ["images/projects/project4-1.png", "images/projects/project4-2.png", "images/projects/project4-3.png"],
                 problem: "Managing and understanding personal financial data can be difficult due to scattered transactions, lack of visualization, and limited insights into spending patterns.",
                 solution: "Developed a data-driven finance dashboard that transforms income and expense data into interactive visualizations and practical insights. The dashboard enables users to track transactions, monitor spending trends, and understand financial activity through dynamic charts and clear data views. A clean, user-friendly interface supports better financial understanding and decision-making.",
@@ -255,12 +255,12 @@ const MODAL_DATA = {
     }
 };
 
-// Build asset URLs for GitHub Pages compatibility
+// Build asset URLs for GitHub Pages compatibility and local previews
 function getAssetUrl(relativePath) {
-    const repoBase = window.location.hostname.endsWith("github.io")
-        ? `/${window.location.pathname.split("/")[1] || ""}`
-        : "";
-    return `${repoBase}/${relativePath}`.replace(/\/+/g, "/");
+    const isGithub = window.location.hostname.endsWith("github.io");
+    const repoBase = isGithub ? `/${window.location.pathname.split("/")[1] || ""}` : "";
+    const path = repoBase ? `${repoBase}/${relativePath}` : relativePath;
+    return path.replace(/\/\/+/g, "/");
 }
 
 // Render image grid
