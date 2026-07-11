@@ -17,22 +17,25 @@
 <!-- ================= HERO SECTION ================= -->
 <header class="hero">
     <div class="hero-text">
-        <h1>Hi, I’m Rohit Sai</h1>
+        <h1 class="hero-heading" aria-label="Heyy!, I'm Rohit 👋">
+            <span id="hero-typewriter-text"></span>
+            <span id="hero-cursor" class="hero-cursor" aria-hidden="true">|</span>
+        </h1>
 
-        <p>
+        <p class="hero-fade hero-subtitle">
             <strong>Computer Science Engineering undergraduate</strong> interested in
             problem-solving and building real-world software solutions, with a focus
             on practical systems and AI-driven technologies.
         </p>
 
-        <div class="contact-email">
+        <div class="contact-email hero-fade hero-reveal-contact">
             <a href="mailto:grohitsai31@gmail.com">
                 <i class="fab fa-google"></i>
                 <span>grohitsai31@gmail.com</span>
             </a>
         </div>
 
-        <div class="social-icons">
+        <div class="social-icons hero-fade hero-reveal-social">
             <a href="https://www.linkedin.com/in/rohit-sai-716646298/" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
@@ -43,7 +46,7 @@
     </div>
 
     <div class="hero-image">
-        <img src="profile.jpeg" alt="Rohit Sai" class="profile-pic">
+        <img src="profile.png" alt="Rohit Sai" class="profile-pic">
     </div>
 </header>
 
@@ -179,6 +182,64 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
+function initHeroTypewriter() {
+    const hero = document.querySelector(".hero");
+    const heroText = document.querySelector(".hero-text");
+    const profileImage = document.querySelector(".hero-image");
+    const headingText = document.getElementById("hero-typewriter-text");
+    const cursor = document.getElementById("hero-cursor");
+    const subtitle = document.querySelector(".hero-subtitle");
+    const contact = document.querySelector(".hero-reveal-contact");
+    const social = document.querySelector(".hero-reveal-social");
+
+    if (!hero || !heroText || !profileImage || !headingText || !cursor) return;
+
+    const fullText = "Heyy!, I'm Rohit 👋";
+    const typingDelay = 90;
+    let index = 0;
+
+    const startHeroMotion = () => {
+        hero.classList.add("is-animating");
+        heroText.classList.add("is-visible");
+    };
+
+    const revealHeroContent = () => {
+        [subtitle, contact, social].forEach((element, position) => {
+            if (!element) return;
+            window.setTimeout(() => {
+                element.classList.add("is-visible");
+            }, 160 + position * 150);
+        });
+    };
+
+    const stopCursorBlinking = () => {
+        cursor.classList.add("is-static");
+    };
+
+    const typeNextCharacter = () => {
+        headingText.textContent = fullText.slice(0, index + 1);
+        index += 1;
+
+        if (index < fullText.length) {
+            window.setTimeout(typeNextCharacter, typingDelay);
+            return;
+        }
+
+        revealHeroContent();
+        window.setTimeout(stopCursorBlinking, 1000);
+    };
+
+    headingText.textContent = "";
+    window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+            startHeroMotion();
+            typeNextCharacter();
+        });
+    });
+}
+
+window.addEventListener("DOMContentLoaded", initHeroTypewriter, { once: true });
+
 // Modal content data structure
 const MODAL_DATA = {
     projects: {
