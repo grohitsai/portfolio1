@@ -474,7 +474,7 @@ body.modal-open {
     section {
         margin: 20px 15px;
         padding: 20px;
-        border-left: 4px solid #4b2525fc;
+        border-left: 4px solid var(--color-border);
     }
 
     section h2 {
