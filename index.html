@@ -62,24 +62,31 @@
 <section>
     <h2>Skills</h2>
     <ul>
-        <li><strong>Languages:</strong>Java, Python, JavaScript, HTML, CSS</li>
-        <li><strong>Web Development:</strong> React, Node.js, Express.js, Next.js</li>
-        <li><strong>Databases:</strong> MySQL, MongoDB</li>
-        <li><strong>Tools:</strong> VS Code, Git, Eclipse, PyCharm</li>
+        <li><strong>Programming Languages:</strong> Java, JavaScript, SQL</li>
+        <li><strong>Database:</strong> MySQL</li>
+        <li><strong>Web Development:</strong> React.js, Vue.js, Node.js, Express.js, REST APIs, JWT Authentication</li>
+        <li><strong>AI / ML & Automation:</strong> OpenCV, Generative AI Fundamentals, Prompt Engineering, LLM API Integration (OpenAI), AI-assisted Development Tools (GitHub Copilot), Agentic AI Basics, n8n</li>
+        <li><strong>Tools & Platforms:</strong> Git, GitHub, Postman, VS Code, Eclipse, PyCharm</li>
     </ul>
 </section>
 
 <!-- ================= EXPERIENCE ================= -->
 <section>
-    <h2>Experience</h2>
-    <p><strong>Mentor Intern – Smart Interviews</strong></p>
-    <p>DSA Training Program | May – Present</p>
+    <h2>
+        Experience
+        <span class="more-link" data-modal="experience">more info</span>
+    </h2>
+    <div class="experience-header">
+        <p class="experience-title"><strong>ValueLabs | Software Engineering Intern</strong></p>
+        <p class="experience-date">July 2026 – Present</p>
+    </div>
+    <p><strong>Tech Stack:</strong> Vue.js, Node.js, Express.js, Postman, Git</p>
+    <p><strong>Currently Learning:</strong> Docker, CI/CD</p>
     <ul>
-        <li>Selected as a Mentor Intern for Smart Interviews’ college DSA training program.</li>
-        <li>Mentoring junior students in Data Structures and Algorithms.</li>
-        <li>Assisting one instructor along with a team of mentors in guiding around 130 students.</li>
-        <li>Helping students understand DSA concepts, solve coding problems, and improve problem-solving skills.</li>
-        <li>Supporting practice sessions by clearing doubts and explaining problem-solving approaches.</li>
+        <li>Developed a full-stack CRUD-based Tool Link Registry using Vue.js, Node.js, Express.js.</li>
+        <li>Built and integrated REST APIs for creating, viewing, updating, and deleting tool links.</li>
+        <li>Tested APIs using Postman and managed code with Git.</li>
+        <li>Collaborated with mentors through daily task updates in an Agile team environment.</li>
     </ul>
 </section>
 
@@ -300,6 +307,15 @@ const MODAL_DATA = {
             }
         ]
     },
+    experience: {
+        title: "Experience",
+        images: [
+            "images/experience/pic1.jpeg",
+            "images/experience/pic2.jpeg",
+            "images/experience/pic3.jpeg",
+            "images/experience/pic4.png"
+        ]
+    },
     responsibility: {
         title: "Position of Responsibility",
         main: {
@@ -378,6 +394,8 @@ function generateModalContent(type) {
             <h3>${block.title}</h3>
             ${renderImageGrid(block.images)}
         `).join("");
+    } else if (type === "experience") {
+        html += renderImageGrid(data.images);
     } else if (type === "responsibility") {
         const r = data.main;
         html += `
@@ -404,10 +422,12 @@ function openModal(type) {
     const content = document.getElementById("modal-content");
     content.innerHTML = generateModalContent(type);
     modal.classList.remove("hidden");
+    document.body.classList.add("modal-open");
 }
 
 function closeModal() {
     document.getElementById("modal-overlay").classList.add("hidden");
+    document.body.classList.remove("modal-open");
 }
 
 // Event delegation for modal triggers and close
