@@ -428,6 +428,10 @@ body.modal-open {
     .hero-heading {
         font-size: 32px;
         margin-bottom: 0;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
     }
 
     .hero-text p {
